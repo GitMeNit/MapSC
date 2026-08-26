@@ -6,4 +6,5 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .env
+http_cache*
 .DS_Store

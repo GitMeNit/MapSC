@@ -1,0 +1,23 @@
+sector_name: "Semiconductors"
+hs_codes:
+  - "8542" # Electronic integrated circuits
+  - "3818" # Doped chemical elements for electronics (silicon wafers)
+seed_entities:
+  - "TSMC"
+  - "ASML"
+  - "Samsung Electronics"
+  - "Intel"
+key_materials:
+  - "Silicon"
+  - "Neon Gas"
+  - "Gallium"
+  - "Germanium"
+chokepoint_definitions:
+  - "EUV Lithography Equipment"
+  - "Advanced Packaging Facilities"
+  - "High-purity quartz mining"
+search_keywords:
+  - "wafer fabrication"
+  - "chip shortage"
+  - "foundry capacity expansion"
+  - "semiconductor export controls"

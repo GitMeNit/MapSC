@@ -5,3 +5,4 @@ stable-baselines3
 gymnasium
 fastapi
 requests
+requests-cache
