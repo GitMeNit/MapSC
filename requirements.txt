@@ -6,3 +6,4 @@ gymnasium
 fastapi
 requests
 requests-cache
+python-dotenv

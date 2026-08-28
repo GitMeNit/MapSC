@@ -1,0 +1,22 @@
+sector_name: "Semiconductors (India Semiconductor Mission)"
+hs_codes:
+  - "8542" # Electronic integrated circuits
+  - "3818" # Doped chemical elements for electronics
+seed_entities:
+  - "Tata Electronics"
+  - "Micron India"
+  - "CG Power and Industrial Solutions"
+  - "Kaynes Technology"
+  - "Foxconn Hon Hai (India)"
+key_materials:
+  - "High-purity Silicon"
+  - "Specialty Chemicals"
+  - "Gallium"
+chokepoint_definitions:
+  - "OSAT (Outsourced Semiconductor Assembly and Test) Capacity"
+  - "Fab construction timelines under PLI scheme"
+search_keywords:
+  - "India Semiconductor Mission"
+  - "Dholera wafer fab"
+  - "Sanand OSAT facility"
+  - "PLI scheme electronics"
