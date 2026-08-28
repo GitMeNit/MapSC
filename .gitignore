@@ -8,3 +8,6 @@ __pycache__/
 .env
 http_cache*
 .DS_Store
+.cursorrules
+.cursor
+.todo.md
