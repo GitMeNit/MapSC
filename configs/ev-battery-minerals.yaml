@@ -1,22 +1,22 @@
-sector_name: "Semiconductors (India Semiconductor Mission)"
+sector_name: "EV Battery Minerals (India)"
 hs_codes:
-  - "8542" # Electronic integrated circuits
-  - "3818" # Doped chemical elements for electronics
+  - "850760" # Lithium-ion accumulators
+  - "283691" # Lithium carbonates
 seed_entities:
-  - "Tata Electronics"
-  - "Micron India"
-  - "CG Power and Industrial Solutions"
-  - "Kaynes Technology"
-  - "Foxconn Hon Hai (India)"
+  - "Ola Electric"
+  - "Reliance New Energy"
+  - "Exide Industries"
+  - "Amara Raja Energy & Mobility"
+  - "Lohum" # Major battery recycler in India
 key_materials:
-  - "High-purity Silicon"
-  - "Specialty Chemicals"
-  - "Gallium"
+  - "Lithium"
+  - "Cobalt"
+  - "Graphite"
 chokepoint_definitions:
-  - "OSAT (Outsourced Semiconductor Assembly and Test) Capacity"
-  - "Fab construction timelines under PLI scheme"
+  - "Cell manufacturing gigafactories"
+  - "Lithium block auctions (J&K, Chhattisgarh)"
+  - "Battery recycling infrastructure"
 search_keywords:
-  - "India Semiconductor Mission"
-  - "Dholera wafer fab"
-  - "Sanand OSAT facility"
-  - "PLI scheme electronics"
+  - "advanced chemistry cell PLI"
+  - "lithium auction India"
+  - "gigafactory construction Tamil Nadu"

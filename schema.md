@@ -1,10 +1,14 @@
-# Industry Configuration Schema
+# Generic Supply Chain Graph Schema
 
-Every industry configuration file (`configs/<industry>.yaml`) must contain:
+## Node Types
+*   **Company**: Corporate entities involved in the supply chain (e.g., manufacturers, suppliers).
+*   **Facility**: Physical operational locations (e.g., factories, mines, ports).
+*   **Material**: Raw, processed, or refined inputs.
+*   **Product**: Manufactured goods, components, or sub-assemblies.
+*   **Country**: Geopolitical jurisdictions for risk and trade mapping.
 
-*   **sector_name** (String): Human-readable name of the industry.
-*   **hs_codes** (List[String]): Harmonized System codes for querying trade and customs databases.
-*   **seed_entities** (List[String]): Major anchor companies to jumpstart the graph expansion.
-*   **key_materials** (List[String]): Critical inputs to track for vulnerability.
-*   **chokepoint_definitions** (List[String]): Known structural bottlenecks (technological or geographic).
-*   **search_keywords** (List[String]): Semantic terms for NLP, web scraping, and news ingestion.
+## Edge Types (Relationships)
+*   **supplies_to** (Source: Company/Facility → Target: Company/Facility): Represents trade flow, contracts, or logistics.
+*   **depends_on** (Source: Product/Material → Target: Material/Product): Represents the Bill of Materials (BOM) hierarchy.
+*   **located_in** (Source: Company/Facility → Target: Country): Geographic and jurisdictional mapping.
+*   **produces** (Source: Company/Facility → Target: Product/Material): Manufacturing, extraction, or refining capability.
