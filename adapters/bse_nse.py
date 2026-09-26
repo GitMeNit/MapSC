@@ -12,35 +12,26 @@ class BseNseAdapter(DataSourceAdapter):
         pass
 
     def fetch(self, params: Dict[str, Any]) -> List[RawRecord]:
-        # Expects params['symbols'] (e.g., "TATASTEEL") and optional date range
-        records: List[RawRecord] = []
+        records = []
         symbols = params.get("symbols", [])
-        from_date = params.get("from_date")
-        to_date = params.get("to_date")
-
-        try:
-            if from_date or to_date:
-                announcements_df = capital_market.corporate_actions_for_equity(
-                    from_date=from_date,
-                    to_date=to_date,
-                )
-            else:
-                announcements_df = capital_market.corporate_actions_for_equity()
-
-            if announcements_df is None or announcements_df.empty:
-                return records
-
-            for symbol in symbols:
-                symbol_announcements = announcements_df[announcements_df['symbol'] == symbol]
-                for _, row in symbol_announcements.iterrows():
-                    records.append(RawRecord(
-                        source_name="nse_announcements",
-                        raw_data=row.to_dict(),
-                        timestamp=datetime.datetime.now().isoformat()
-                    ))
-
-        except Exception as e:
-            for symbol in symbols:
+        
+        for symbol in symbols:
+            try:
+                # nselib requires a period parameter for this function
+                df = capital_market.price_volume_and_deliverable_position_data(symbol=symbol, period='1M')
+                
+                # Convert the pandas DataFrame to a list of dicts for our RawRecords
+                if df is not None and not df.empty:
+                    data_dict = df.to_dict(orient="records")
+                    for row in data_dict:
+                        records.append(RawRecord(
+                            source_name="nse_market_data",
+                            raw_data=row,
+                            timestamp=datetime.datetime.now().isoformat()
+                        ))
+            except Exception as e:
                 print(f"Failed fetching data for {symbol}: {e}")
-
+                
         return records
+
+    

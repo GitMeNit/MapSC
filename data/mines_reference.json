@@ -1,0 +1,68 @@
+[
+  {
+    "mineral_name": "Lithium",
+    "location": "Salal-Haimana Block",
+    "district": "Reasi",
+    "state": "Jammu & Kashmir",
+    "estimated_reserves": "5.9 Million Tonnes (G3 Inferred Resources)",
+    "ore_type": "Bauxite-associated Lithium Clay / Carbonate",
+    "reporting_agency": "Geological Survey of India (GSI) / Ministry of Mines",
+    "auction_status": "Tranche 1 Critical Mineral Auction",
+    "reporting_year": "2023-2024"
+  },
+  {
+    "mineral_name": "Lithium",
+    "location": "Marlagalla-Allapatna Area",
+    "district": "Mandya",
+    "state": "Karnataka",
+    "estimated_reserves": "1600 Tonnes (Spodumene Pegmatite)",
+    "ore_type": "Spodumene pegmatites",
+    "reporting_agency": "Atomic Minerals Directorate (AMD) / Ministry of Mines",
+    "auction_status": "Exploration Phase G4",
+    "reporting_year": "2023-2024"
+  },
+  {
+    "mineral_name": "Lithium",
+    "location": "Katghora Block",
+    "district": "Korba",
+    "state": "Chhattisgarh",
+    "estimated_reserves": "Exploration Composite Block",
+    "ore_type": "Lithium and associated Rare Elements",
+    "reporting_agency": "Ministry of Mines / IBM",
+    "auction_status": "Auctioned to Private Composite Licensee",
+    "reporting_year": "2024"
+  },
+  {
+    "mineral_name": "Cobalt",
+    "location": "Bababudan Hills / Kendujhar",
+    "district": "Kendujhar",
+    "state": "Odisha",
+    "estimated_reserves": "44 Million Tonnes (Nickel-Cobalt Laterite)",
+    "ore_type": "Lateritic Nickel-Cobalt",
+    "reporting_agency": "Indian Bureau of Mines (IBM)",
+    "auction_status": "Strategic Critical Mineral Reserve",
+    "reporting_year": "2023-2024"
+  },
+  {
+    "mineral_name": "Graphite",
+    "location": "Sivaganga Block",
+    "district": "Sivaganga",
+    "state": "Tamil Nadu",
+    "estimated_reserves": "1.2 Million Tonnes",
+    "ore_type": "Flake Graphite",
+    "reporting_agency": "Indian Bureau of Mines (IBM)",
+    "auction_status": "Active Mine Lease",
+    "reporting_year": "2023-2024"
+  },
+  {
+    "mineral_name": "Rare Earth Elements",
+    "location": "Chavara Coastal Beach Sand",
+    "district": "Kollam",
+    "state": "Kerala",
+    "estimated_reserves": "Monazite Heavy Mineral Sand (Concentration 2.5%)",
+    "ore_type": "Monazite / Ilmenite / Rutile",
+    "reporting_agency": "IREL (India) Ltd / Ministry of Mines",
+    "auction_status": "State Monopolized Critical Production",
+    "reporting_year": "2023-2024"
+  }
+]

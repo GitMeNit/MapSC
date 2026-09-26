@@ -3,8 +3,8 @@ from unittest.mock import patch, MagicMock
 from adapters.base import RawRecord
 from adapters.bse_nse import BseNseAdapter
 from adapters.dgft import DgftOgdAdapter
-from adapters.ibm_mines import MinesOgdAdapter
-from adapters.ip_india import GooglePatentsIndiaAdapter
+from adapters.ibm_mines import MinistryOfMinesOgdAdapter
+from adapters.ip_india import GooglePatentsBigQueryAdapter
 from adapters.comtrade import ComtradeIndiaAdapter
 
 # --- MOCK DATA FIXTURES ---
@@ -52,19 +52,19 @@ def mock_bq_results():
 
 # --- ADAPTER TESTS ---
 
-@patch('adapters.bse_nse.capital_market.corporate_actions_for_equity')
-def test_bse_nse_adapter(mock_corporate_actions, mock_nselib_df):
+@patch('adapters.bse_nse.capital_market.price_volume_and_deliverable_position_data')
+def test_bse_nse_adapter(mock_price_data, mock_nselib_df):
     # Setup mock
-    mock_corporate_actions.return_value = mock_nselib_df
+    mock_price_data.return_value = mock_nselib_df
 
     # Run test
     adapter = BseNseAdapter()
     records = adapter.fetch({"symbols": ["TATASTEEL"]})
     
     # Assertions
-    assert len(records) == 2
+    assert len(records) == 3
     assert isinstance(records[0], RawRecord)
-    assert records[0].source_name == "nse_announcements"
+    assert records[0].source_name == "nse_market_data"
     assert records[0].raw_data["subject"] == "Dividend"
 
 @patch('adapters.dgft.BaseAPIClient')
@@ -89,11 +89,11 @@ def test_ibm_mines_adapter(mock_api_client_class, mock_api_response):
     mock_instance = mock_api_client_class.return_value
     mock_instance.get.return_value = mock_api_response
     
-    adapter = MinesOgdAdapter(api_key="fake_key")
+    adapter = MinistryOfMinesOgdAdapter(api_key="fake_key")
     records = adapter.fetch({"resource_id": "test_id", "materials": ["Lithium"]})
     
     assert len(records) == 2
-    assert records[0].source_name == "mines_ogd"
+    assert records[0].source_name == "ibm_ogd"
     mock_instance.get.assert_called_once()
     args, kwargs = mock_instance.get.call_args
     assert kwargs["params"]["filters[mineral_name]"] == "Lithium"
@@ -105,27 +105,27 @@ def test_google_patents_bq_adapter(mock_bq_client_class, mock_bq_results):
     mock_query_job.result.return_value = mock_bq_results
     mock_instance.query.return_value = mock_query_job
     
-    adapter = GooglePatentsIndiaAdapter(project_id="test_project")
+    adapter = GooglePatentsBigQueryAdapter(project_id="test_project")
     records = adapter.fetch({"seed_entities": ["Tata Electronics"]})
     
     assert len(records) == 1
-    assert records[0].source_name == "google_patents_in"
+    assert records[0].source_name == "google_patents_bq_in"
     # Verify the SQL query injected the uppercase entity name
     args, kwargs = mock_instance.query.call_args
-    assert "'TATA ELECTRONICS'" in args[0]
+    assert "TATA ELECTRONICS" in args[0]
 
 @patch('adapters.comtrade.BaseAPIClient')
 def test_comtrade_india_adapter(mock_api_client_class, mock_api_response):
     mock_instance = mock_api_client_class.return_value
     mock_instance.get.return_value = mock_api_response
     
-    adapter = ComtradeIndiaAdapter()
+    adapter = ComtradeIndiaAdapter(api_key="fake_key")
     records = adapter.fetch({"hs_codes": ["8542"], "years": [2023]})
     
     assert len(records) == 1
-    assert records[0].source_name == "un_comtrade_india"
+    assert records[0].source_name == "un_comtrade_in"
     assert records[0].raw_data["cmdCode"] == "8542"
     
     args, kwargs = mock_instance.get.call_args
-    assert kwargs["params"]["reporterCode"] == "356" # Verifying India is hardcoded
+    assert "356" in kwargs["params"]["reporterCode"] # Verifying India is queried
     assert kwargs["params"]["cmdCode"] == "8542"

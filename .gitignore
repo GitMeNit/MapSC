@@ -1,13 +1,51 @@
+# Python & virtual environments
 .venv/
 venv/
+ENV/
+env/
 __pycache__/
 *.py[cod]
+*$py.class
 *.egg-info/
+dist/
+build/
+*.egg
+
+# Testing & Linting
 .pytest_cache/
 .mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environment Variables & Secrets
 .env
+.env.*
+!.env.example
+credentials/
+.credentials/
+*.pem
+*.key
+*.p12
+
+# Local Caches & SQLite Databases
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.db
+supply_chain_cache.sqlite
 http_cache*
+
+# IDE & Editor Configuration
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
 .DS_Store
+Thumbs.db
+
+# Project-specific metadata & temporary files
+.cursor/
 .cursorrules
-.cursor
 .todo.md
+*.log

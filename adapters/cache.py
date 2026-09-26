@@ -40,7 +40,7 @@ class BaseAPIClient:
     """Shared HTTP client with caching already injected via requests_cache."""
     
     @rate_limited(calls=5, period=1) # Default fallback: 5 calls per second
-    def get(self, url: str, params: Optional[Dict[str, Any]] = None, headers: Optional[Dict[str, str]] = None) -> requests.Response:
-        response = requests.get(url, params=params, headers=headers)
+    def get(self, url: str, params: Optional[Dict[str, Any]] = None, headers: Optional[Dict[str, str]] = None, timeout: Optional[int] = None) -> requests.Response:
+        response = requests.get(url, params=params, headers=headers, timeout=timeout)
         response.raise_for_status()
         return response

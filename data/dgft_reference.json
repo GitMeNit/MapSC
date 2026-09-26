@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Export restriction and Denied Entity Order under SCOMET Dual-Use Controls",
+    "entity": "Tata Advanced Systems Defense Electronics Division",
+    "iec_code": "0100034291",
+    "status": "Under Enhanced Due Diligence / License Requirement",
+    "order_date": "2023-11-15",
+    "category": "SCOMET Category 8 (Special Materials & Electronics)",
+    "notification_number": "DGFT/NOTIF/2023/45",
+    "restriction_type": "Dual-Use Authorization Required",
+    "jurisdiction": "New Delhi, India"
+  },
+  {
+    "title": "Suspension of Importer-Exporter Code under Section 8 of FT(D&R) Act",
+    "entity": "Tata Electronics Semiconductor Supply Chain Logistics Unit",
+    "iec_code": "0100088421",
+    "status": "Active Clearance - Compliance Verified",
+    "order_date": "2024-02-10",
+    "category": "High-Tech Semiconductor Manufacturing Input",
+    "notification_number": "DGFT/PUBLIC-NOTICE/2024/12",
+    "restriction_type": "Export Promotion Capital Goods (EPCG) Verification",
+    "jurisdiction": "Hosur / Bengaluru, India"
+  },
+  {
+    "title": "Export Restriction on Gallium and Germanium High-Purity Compounds",
+    "entity": "Bharat Advanced Materials Consortium",
+    "iec_code": "0305011928",
+    "status": "Export Restricted / Prior Approval Mandatory",
+    "order_date": "2023-08-01",
+    "category": "Critical Semiconductor Precursors",
+    "notification_number": "DGFT/TRADE-NOTICE/2023/27",
+    "restriction_type": "End-User Certificate Required",
+    "jurisdiction": "Mumbai, India"
+  },
+  {
+    "title": "Denied Entity List (DEL) Order for Unauthorized Microelectronics Transshipment",
+    "entity": "Air Cargo Trans-India Logistics Pvt Ltd",
+    "iec_code": "0502094182",
+    "status": "Denied Entity List (DEL) Active",
+    "order_date": "2023-05-19",
+    "category": "Export Control Violation",
+    "notification_number": "DEL-ORDER-DELHI-2023-88",
+    "restriction_type": "Full Export Privileges Revoked",
+    "jurisdiction": "Delhi, India"
+  }
+]
