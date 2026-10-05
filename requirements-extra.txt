@@ -1,0 +1,7 @@
+gymnasium
+stable-baselines3
+langgraph
+langchain-anthropic
+langchain-google-genai
+fastapi
+uvicorn

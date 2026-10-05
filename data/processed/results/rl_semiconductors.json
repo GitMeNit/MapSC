@@ -1,0 +1,27 @@
+{
+  "industry": "semiconductors",
+  "n_episodes": 10,
+  "top_k": 8,
+  "policies": {
+    "baseline": {
+      "mean_reward": -33.9025,
+      "std_reward": 3.7422,
+      "min_reward": -38.275,
+      "max_reward": -26.4383
+    },
+    "random": {
+      "mean_reward": -46.2875,
+      "std_reward": 1.8855,
+      "min_reward": -49.6707,
+      "max_reward": -42.8683
+    },
+    "ppo": {
+      "mean_reward": -31.9687,
+      "std_reward": 0.7589,
+      "min_reward": -33.4888,
+      "max_reward": -30.7898,
+      "win_rate_vs_baseline": 0.7
+    }
+  },
+  "ppo_beats_baseline": true
+}
